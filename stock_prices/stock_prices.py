@@ -4,12 +4,22 @@ import argparse
 
 def find_max_profit(prices):
   # pass
-  small_price = {}
+  price_dict = {}
+  profit = 0
   for price in range(0, len(prices)):
-    small_price[price] = prices[price]
-  print('small price', small_price)
-  for key, value in small_price:
-    
+    price_dict[price] = prices[price]
+  print('price dictionary', price_dict)
+  print('profit1', profit)
+  for key, value in price_dict.items():
+    print('key, value', value)
+    for j in range(0, len(prices)):
+      if key > j and (value-prices[j])>profit:
+        profit = value-prices[j]
+        print('profit2', profit)
+  print('profit3', profit)
+  return profit
+
+
   
 
 
